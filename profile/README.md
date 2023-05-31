@@ -1,8 +1,7 @@
-Overview
-========
+# Overview
+The documentation for the University of Maryland Spot (UMD-Spot) research project may be found here. 
 
-Dependencies
-------------
+## Dependencies
 Spot ROS, <Description>, Link: https://github.com/heuristicus/spot_ros
 
 ## Viewing URDF Files
@@ -11,35 +10,38 @@ Spot ROS, <Description>, Link: https://github.com/heuristicus/spot_ros
 ![Screenshot from 2023-05-30 17-53-06](https://github.com/SPOT-UMD/.github/assets/27888732/a266352e-36d1-448e-b6bd-702525050b30)
 
   
-## Networking 
-  
+## Networking Overview
+  The following section summarizes Spot's computer networks. Things we need: name each network, what data is shared, why it is needed, ips/ports, etc.
   
   ![Notes_230530_190655](https://github.com/SPOT-UMD/.github/assets/19653313/e3319560-2b42-4ae1-a440-1895a373f48a)
   
-  ### how to
-  in order to get ```rostopics``` published by the SpotCore to your local machine over the RAL_wifi network, it is necessary to do the following:
+  ### Networking Configuration: SpotCore ```rostopics``` over "RAL_wifi"
+  The goal of this section is to describe the procedure for configuring the [NETWORK_NAME_1] network on the SpotCore and on the [NETWORK_NAME_2] network on your personal machine in order to "see" ```rostopics``` published by the SpotCore from your personal computer over "RAL_wifi". There are two steps to the procedure. See [this](LINK_TO_SITE_CONTAINING_SOLUTION).
+    
+  > NOTE: The first step is already done, so it is only necessary to do the ``Step 2'', which is specific to your personal machine. Both steps are included for completeness and clarity.
 
-  
-  ssh into the spotcore in as the ```spot``` user and execute the following command to see the list of routes:
+  1. ```ssh``` into the SpotCore as the ```spot``` user (which has administrator privelages) and execute the following command to see the list of routes:
   ```bash
   route 
   ```
-  You should get something like this:
+  You should get something like this if Step 1 has not been completed yet:
   ![spotcore_routes_original](https://github.com/SPOT-UMD/.github/assets/19653313/d1981cd1-f1d8-435d-a4ee-7184b18547ee)
   
-  ssh into the spotcore in as the ```spot``` user and execute the following command to see add __ to ___:
+  Now, execute the following command to add a route on the SpotCore to [NETWORK_NAME_2] network through the gateway ```192.168.2.3``` (which is the Jetson Xavier IP on the [NETWORK_NAME_1] network):
   ```bash
   sudo route add -net 192.168.79.0 netmask 255.255.255.0 gw 192.168.2.3
   ```
+  Use the ```route``` command again to see the updated list of routes. It should look like this (IMAGE 2):
   
-  Finally, start the roscore on the spotcore in the standard way (need to document):
+  Finally, re-```ssh``` into the SpotCore as the ```spot-user``` user, and start ```roscore``` on the SpotCore in the standard way:
   ```bash
+  source /opt/ros/melodic/setup.bash
+  source /home/spot/catkin_ws/devel/setup.bash  # NOTE: this is NOT in the "/home/spot-user/" sub-directory
   roslaunch spot_ros driver_no_lidar.launch
   ```
   
-  In a terminal on your local machine, execute the following command to add __ to __:
+  2. In a terminal on your local machine, execute the following command to add a route on your machine to  [NETWORK_NAME_1] network through the gateway ```192.168.79.219``` (which is the Jetson Xavier IP on the [NETWORK_NAME_2] network):
   ```bash
-  # sudo route add -net 192.168.2.0 netmask 255.255.255.0 gw <IP of XAVIER on RAL_wifi>
   sudo route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.79.219
   ```
   

@@ -11,14 +11,14 @@ Spot ROS, <Description>, Link: https://github.com/heuristicus/spot_ros
 
   
 ## Networking Overview
-  The following section summarizes Spot's computer networks. Things we need: name each network, what data is shared, why it is needed, ips/ports, etc.
+  The following section summarizes Spot's computer networks. Things we need to add: name each network, what data is shared, why that data needs to be shared (for what purpose is it shared), ips/ports, hardware interface (ethernet, wlan)
   
   ![Notes_230530_190655](https://github.com/SPOT-UMD/.github/assets/19653313/e3319560-2b42-4ae1-a440-1895a373f48a)
   
   ### Networking Configuration: SpotCore ```rostopics``` over "RAL_wifi"
-  The goal of this section is to describe the procedure for configuring the [NETWORK_NAME_1] network on the SpotCore and on the [NETWORK_NAME_2] network on your personal machine in order to "see" ```rostopics``` published by the SpotCore from your personal computer over "RAL_wifi". There are two steps to the procedure. See [this](LINK_TO_SITE_CONTAINING_SOLUTION).
+  The goal of this section is to describe the procedure for configuring the [NETWORK_NAME_1] network on the SpotCore and the [NETWORK_NAME_2] network on your personal machine in order to "see" ```rostopics``` published by the SpotCore from your personal computer over "RAL_wifi". There are two steps to the procedure. See [this](LINK_TO_SITE_CONTAINING_SOLUTION).
     
-  > NOTE: The first step is already done, so it is only necessary to do the ``Step 2'', which is specific to your personal machine. Both steps are included for completeness and clarity.
+  > NOTE: "Step 1" is already done, so it is only necessary to do "Step 2", which is specific to your personal machine. Both steps are included for completeness and clarity.
 
   1. ```ssh``` into the SpotCore as the ```spot``` user (which has administrator privelages) and execute the following command to see the list of routes:
   ```bash

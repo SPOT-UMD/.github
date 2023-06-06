@@ -1,14 +1,21 @@
 # Overview
 The documentation for the University of Maryland Spot (UMD-Spot) research project may be found here. 
 
-## Dependencies
-Spot ROS, <Description>, Link: https://github.com/heuristicus/spot_ros
-
 ## Viewing URDF Files
   
   Run `roslaunch urdf_tutorial display.launch model:=filename.urdf.xacro` to open a GUI (Rviz) showing the URDF model and all coordinate frames associated with it.
 ![Screenshot from 2023-05-30 17-53-06](https://github.com/SPOT-UMD/.github/assets/27888732/a266352e-36d1-448e-b6bd-702525050b30)
 
+## Frames
+### TF Tree when only ```spot_ros``` Runs
+[tf_tree.pdf](https://github.com/SPOT-UMD/.github/files/11669388/tf_tree.pdf)
+
+### TF Tree when both ```spot_ros``` and ```spot_nav``` Run
+[tf_tree_spot_nav.pdf](https://github.com/SPOT-UMD/.github/files/11669389/tf_tree_spot_nav.pdf)
+
+
+## Dependencies
+Spot ROS, <Description>, Link: https://github.com/heuristicus/spot_ros
   
 ## Networking Overview
   The following section summarizes Spot's computer networks. Things we need to add: name each network, what data is shared, why that data needs to be shared (for what purpose is it shared), ips/ports, hardware interface (ethernet, wlan)

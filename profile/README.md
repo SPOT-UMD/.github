@@ -1,9 +1,21 @@
 # Overview
-The documentation for the University of Maryland Spot (UMD-Spot) research project may be found here. 
+This document provides a high-level overview of the hardware and software components developed by the members of the Collective Dynamics and Control Lab (CDCL) at the University of Maryland, College Park (UMD) and deployed on a Boston Dynamics Spot Robot.
 
-## Viewing URDF Files
-  
-  Run `roslaunch urdf_tutorial display.launch model:=filename.urdf.xacro` to open a GUI (Rviz) showing the URDF model and all coordinate frames associated with it.
+The overall goal of this research project is to have Spot coordinate with a swarm of UAVs to autonomously search an area for so-called "targets" (cars, trucks, people, etc.).
+
+## Hardware Overview
+### Spot Robot from Boston Dynamics
+
+### SpotCORE (Companion Computer)
+
+### NVIDIA Jetson Xavier (Companion Computer)
+
+### GPS Emlid Flow (
+Doolde Radio Embedded
+Velodyne LiDAR
+
+## Viewing URDF Files  
+Run `roslaunch urdf_tutorial display.launch model:=filename.urdf.xacro` to open a GUI (Rviz) showing the URDF model and all coordinate frames associated with it.
 ![Screenshot from 2023-05-30 17-53-06](https://github.com/SPOT-UMD/.github/assets/27888732/a266352e-36d1-448e-b6bd-702525050b30)
 
 ## Frames

@@ -1,36 +1,60 @@
 # Overview
-This document provides a high-level overview of the hardware and software components developed by the members of the Collective Dynamics and Control Lab (CDCL) at the University of Maryland, College Park (UMD) and deployed on a Boston Dynamics Spot Robot.
+This document provides a high-level **overview of the hardware and software components** developed by the members of the **Collective Dynamics and Control Lab (CDCL)** at the **University of Maryland**, College Park (UMD) and **deployed on a BostonDynamics Spot®**.
 
-The overall goal of this research project is to have Spot coordinate with a swarm of UAVs to autonomously search an area for so-called "targets" (cars, trucks, people, etc.).
+The <ins>overall goal of this research project</ins> is to have <ins>Spot coordinate with a swarm of UAVs to autonomously search and track an area for so-called "targets" (cars, trucks, people, etc.)</ins>.
 
 ## Hardware Overview
-### Spot Robot from Boston Dynamics
+![Image of Spot Standing in Lab with labels]()
 
-### SpotCORE (Companion Computer)
+_Figure 1: Labelled image of BostonDynamics Spot® with hardware payload._
 
-### NVIDIA Jetson Xavier (Companion Computer)
+The following section provides an overview of the hardware payload mounted on the back of the BostonDynamics Spot®.
 
-### GPS Emlid Flow (
-Doolde Radio Embedded
-Velodyne LiDAR
+### BostonDynamics Spot® Robot
+[]()
 
-## Viewing URDF Files  
+### BostonDynamics SpotCORE® Companion Computer
+[Boston Dynamics documentation](https://support.bostondynamics.com/s/article/Spot-CORE-payload-reference
+
+
+### NVIDIA Jetson Xavier® Companion Computer
+- [ ] create a table of links
+[Jetson FAQ](https://developer.nvidia.com/embedded/faq)
+
+
+### Emlid M+® RTK Unit
+
+
+### Doolde Labs Embedded Mesh Rider® Radio
+
+
+### Velodyne Puck® LiDAR
+[](https://velodynelidar.com/products/puck/)
+
+### Intel RealSense D435i® Depth Camera
+[]()
+
+
+## Software Overview
+
+
+### Viewing URDF Files  
 Run `roslaunch urdf_tutorial display.launch model:=filename.urdf.xacro` to open a GUI (Rviz) showing the URDF model and all coordinate frames associated with it.
 ![Screenshot from 2023-05-30 17-53-06](https://github.com/SPOT-UMD/.github/assets/27888732/a266352e-36d1-448e-b6bd-702525050b30)
 
-## Frames
-### TF Tree when only ```spot_ros``` Runs
+### Frames
+#### TF Tree when only ```spot_ros``` Runs
 [tf_tree.pdf](https://github.com/SPOT-UMD/.github/files/11669388/tf_tree.pdf)
 
-### TF Tree when both ```spot_ros``` and ```spot_nav``` Run
+#### TF Tree when both ```spot_ros``` and ```spot_nav``` Run
 [tf_tree_spot_nav.pdf](https://github.com/SPOT-UMD/.github/files/11669389/tf_tree_spot_nav.pdf)
 
 
-## Dependencies
+### Software Dependencies
 Spot ROS, <Description>, Link: https://github.com/heuristicus/spot_ros
   
-## Networking Overview
-  The following section summarizes Spot's computer networks. Things we need to add: name each network, what data is shared, why that data needs to be shared (for what purpose is it shared), ips/ports, hardware interface (ethernet, wlan)
+### Networking Overview
+The following section summarizes Spot's computer networks. Things we need to add: name each network, what data is shared, why that data needs to be shared (for what purpose is it shared), ips/ports, hardware interface (ethernet, wlan)
   
   ![Notes_230530_190655](https://github.com/SPOT-UMD/.github/assets/19653313/e3319560-2b42-4ae1-a440-1895a373f48a)
   

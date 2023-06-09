@@ -24,6 +24,16 @@ The following section provides an overview of the hardware payload mounted on th
 
 ### Emlid M+® RTK Unit
 
+If not configured before, the M+ module will create a hotspot and you can connect to it with password `emlidreach` for setup. Additional notes and steps [here](https://docs.emlid.com/reach/before-you-start/first-setup/) for referece.
+
+The Emlid M+ can then be configured on the Emlid Flow app to connect to a WiFi network (which is recommended for firmware updates). At the time of writing, we have configured the M+ as follows:
+- Correction input: Off
+- Base output: Off
+- Base settigs (Default): Average SINGLE, Antenna height 0m, Averaging time 2 minutes.
+- Settings > GNSS Settings (Default): KINEMATIC, Elevation mask angle 15, SNR mask 35, GPS AR mode Fix-and-hold, GLONASS AR mode off, Vert. acc. 1, Hor. acc. 1, All GNSS systems except BEIDOU, GNSS update rate 5Hz.
+- Settings > Postion streaming 1: Serial with USB to PC, 38400 baud, NMEA.
+- Settings > Position streaming 2: Off
+
 
 ### Doolde Labs Embedded Mesh Rider® Radio
 

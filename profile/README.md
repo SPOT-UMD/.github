@@ -1,7 +1,7 @@
 # Overview
 This document provides a high-level **overview of the hardware and software components** developed by the members of the **Collective Dynamics and Control Lab (CDCL)** at the **University of Maryland**, College Park (UMD) and **deployed on a BostonDynamics Spot®**.
 
-The <ins>overall goal of this research project</ins> is to have <ins>Spot coordinate with a swarm of UAVs to autonomously search and track an area for so-called "targets" (cars, trucks, people, etc.)</ins>.
+The <ins>overall goal of this project</ins> is to have <ins>Spot coordinate with a swarm of UAVs to autonomously search an area for so-called "targets" (cars, trucks, people, etc.)</ins>.
 
 ## Hardware Overview
 ![Image of Spot Standing in Lab with labels]()

@@ -47,6 +47,17 @@ The Emlid M+ can then be configured on the Emlid Flow app to connect to a WiFi n
 
 ## Software Overview
 
+## Controlling Spot from Command Line
+- start ```driver_no_lidar.launch```
+- relinquish control on tablet
+- run ```rosservice call /spot/claim```
+- run ```rosservice call /spot/power_on``` (should see motors powering on on tablet)
+- run ```rosservice call /spot/stand``` (spot should then stand up)
+- run ```rosservice call /spot/allow_motion``` (one should now be able to command velocities from terminal to move spot)
+- run ```
+
+### What does "got command duration of 5.0" mean?
+- note sure yet
 
 ### Viewing URDF Files  
 Run `roslaunch urdf_tutorial display.launch model:=filename.urdf.xacro` to open a GUI (Rviz) showing the URDF model and all coordinate frames associated with it.

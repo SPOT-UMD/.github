@@ -54,10 +54,15 @@ The Emlid M+ can then be configured on the Emlid Flow app to connect to a WiFi n
 - run ```rosservice call /spot/power_on``` (should see motors powering on on tablet)
 - run ```rosservice call /spot/stand``` (spot should then stand up)
 - run ```rosservice call /spot/allow_motion``` (one should now be able to command velocities from terminal to move spot)
-- run ```
 
-### What does "got command duration of 5.0" mean?
-- note sure yet
+### ```ros1_bridge``` Usage in Project
+This project depends on both ROS1 and ROS2. Some ROS1 nodes depend on data published by ROS2 nodes, and some ROS2 nodes depend on data published by ROS1 nodes. Additionally, the requirements of the project necessitate publishing some data over ROS2. Therefore, it is necessary to make use of the ```ros1_bridge``` ROS2 package to translate ROS1 messages into ROS2 messages and vice versa.
+
+This project makes use of the ```ros1_bridge``` package in two distinct ways: (1) to translate specific target messages from ROS1/ROS2 into ROS2/ROS1, and (2) and to define the translation of custom messages that have been created by this project, which need to be translated between ROS versions.
+
+For the first use case, it is sufficient to define one executable per translation one would like to make. Such executables may be found in the ```ros1_bridge``` repository in the SPOT-CDCL org in GitHub, which was forked from the official repository.
+
+For the second use case, it is common practice to fork the official ```ros1_bridge``` repository on GitHub and define the custom message translations in the forked version of the repo. This is necessary, because ```ros1_bridge``` will only translate messages whose translation has been defined at compile-time. In this way, it is necessary to bulid the ```ros1_bridge``` from source after having made some modifications to the code base defining those custom translations.
 
 ### Viewing URDF Files  
 Run `roslaunch urdf_tutorial display.launch model:=filename.urdf.xacro` to open a GUI (Rviz) showing the URDF model and all coordinate frames associated with it.

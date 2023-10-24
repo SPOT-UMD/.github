@@ -47,13 +47,17 @@ The Emlid M+ can then be configured on the Emlid Flow app to connect to a WiFi n
 
 ## Software Overview
 
+## Logging into NVIDIA Jetson and SpotCORE
+1. `ssh nvidia@?.?.?.?`
+2. `ssh spot-user@192.168.2.2`
+
 ## Controlling Spot from Command Line
-- start ```driver_no_lidar.launch```
-- relinquish control on tablet
-- run ```rosservice call /spot/claim```
-- run ```rosservice call /spot/power_on``` (should see motors powering on on tablet)
-- run ```rosservice call /spot/stand``` (spot should then stand up)
-- run ```rosservice call /spot/allow_motion``` (one should now be able to command velocities from terminal to move spot)
+- start ```driver_no_lidar.launch``` on SpotCore
+- Relinquish control on tablet
+- Run ```rosservice call /spot/claim``` on NVIDIA or SpotCore
+- Run ```rosservice call /spot/power_on``` (should see motors powering on on tablet)
+- Run ```rosservice call /spot/stand``` (spot should then stand up)
+- Run ```rosservice call /spot/allow_motion``` (one should now be able to command velocities from terminal to move spot)
 
 ### ```ros1_bridge``` Usage in Project
 This project depends on both ROS1 and ROS2. Some ROS1 nodes depend on data published by ROS2 nodes, and some ROS2 nodes depend on data published by ROS1 nodes. Additionally, the requirements of the project necessitate publishing some data over ROS2. Therefore, it is necessary to make use of the ```ros1_bridge``` ROS2 package to translate ROS1 messages into ROS2 messages and vice versa.

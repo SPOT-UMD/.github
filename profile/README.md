@@ -108,8 +108,6 @@ The following section summarizes Spot's computer networks. Things we need to add
   
   Finally, re-```ssh``` into the SpotCore as the ```spot-user``` user, and start ```roscore``` on the SpotCore in the standard way:
   ```bash
-  source /opt/ros/melodic/setup.bash
-  source /home/spot/catkin_ws/devel/setup.bash  # NOTE: this is NOT in the "/home/spot-user/" sub-directory
   roslaunch spot_ros driver_no_lidar.launch
   ```
   
